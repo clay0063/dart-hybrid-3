@@ -3,7 +3,8 @@ class Student {
   Student(this.people);
 
   void sortList(String field) {
-    //TODO: figure out better null handling
+    var keyCheck = people.every((person)=>person[field] != null); //checks and sees if the field exists for the items
+    if (!keyCheck) { field = "first"; } //if it doesn't exist, default to sorting by first name
     return people.sort((a, b) => a[field]!.compareTo(b[field]!));
   }
 
@@ -20,7 +21,6 @@ class Student {
   }
 
   void remove(String field) {
-    //TODO: add error checking
-    return people.removeWhere((person) => person.containsValue(field));
+    return people.removeWhere((person) => person.containsValue(field)); //does not cause errors if something doesnt exist
   }
 }

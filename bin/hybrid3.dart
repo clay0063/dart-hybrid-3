@@ -17,7 +17,7 @@ void main(List<String> arguments) {
     return Map<String, String>.from(item); //return a Map String String for each dynamic item in the json list
   }));
 
-  hybrid3.Student testStudent = hybrid3.Student(studentList);
+  var testStudent = hybrid3.Student(studentList);
 
   Map<String, String> newPerson = {
     "first": "Miku",
