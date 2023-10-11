@@ -18,7 +18,10 @@ void main(List<String> arguments) {
   }));
   
   var testStudent = hybrid3.Student(studentList);
-  testStudent.sortList("email");
-  print(testStudent.people);
+
+  testStudent.sortList("first");
+  testStudent.output();
+  //testStudent.plus();
+  //testStudent.remove();
 }
 
