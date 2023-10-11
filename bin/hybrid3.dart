@@ -2,19 +2,23 @@ import 'package:hybrid3/hybrid3.dart' as hybrid3;
 import 'dart:convert' as convert;
 
 void main(List<String> arguments) {
-  const json = '''
+  String json = '''
     [
-      {"first":"John", "last":"Smith", "email":"smithjohn@college.edu"},
-      {"first":"Jane", "last":"Doe", "email":"doejane@college.edu"}
+      {"first":"Steve", "last":"Griffith", "email":"griffis@algonquincollege.com"},
+      {"first":"Adesh", "last":"Shah", "email":"shaha@algonquincollege.com"},
+      {"first":"Tony", "last":"Davidson", "email":"davidst@algonquincollege.com"},
+      {"first":"Adam", "last":"Robillard", "email":"robilla@algonquincollege.com"}
     ]
     ''';
-  var jsonList = convert.jsonDecode(json) as List<dynamic>;
+
+  //convert to list of Map<String String>
+  var jsonList = convert.jsonDecode(json) as List<dynamic>; //can't decode directly to List<Map...>
   var studentList = List<Map<String, String>>.from(jsonList.map((dynamic item){
-    return Map<String, String>.from(item);
+    return Map<String, String>.from(item); //return a Map String String for each dynamic item in the json list
   }));
   
   var testStudent = hybrid3.Student(studentList);
-  testStudent.printStudents();
-  
+  testStudent.sortList("email");
+  print(testStudent.people);
 }
 
