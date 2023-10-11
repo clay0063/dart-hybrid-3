@@ -12,7 +12,8 @@ class Student {
   }
 
   void plus(Map<String, String> person) {
-    //TODO: add a single Map to the List
+    //TODO: add error checking
+    people.add(person);
   }
 
   void remove(String field) {
