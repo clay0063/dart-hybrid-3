@@ -17,6 +17,7 @@ class Student {
   }
 
   void remove(String field) {
-    //TODO: remove an item from the List using the removeWhere() list method
+    //TODO: add error checking
+    people.removeWhere((person) => person.containsValue(field));
   }
 }

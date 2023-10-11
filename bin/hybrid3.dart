@@ -19,7 +19,7 @@ void main(List<String> arguments) {
   
   var testStudent = hybrid3.Student(studentList);
 
-  testStudent.output(); //output before changes
+  // testStudent.output(); //output before changes
 
   Map<String, String> newPerson = {
     "first":"Miku",
@@ -27,7 +27,7 @@ void main(List<String> arguments) {
     "email":"hatsu@algonquinlive.com"
   };
   testStudent.plus(newPerson);
-  //testStudent.remove();
+  testStudent.remove("Adam");
 
   testStudent.sortList("first");
   testStudent.output(); //output after changes
