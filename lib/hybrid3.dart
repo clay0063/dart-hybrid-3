@@ -12,8 +12,11 @@ class Student {
   }
 
   void plus(Map<String, String> person) {
-    //TODO: add error checking
-    return people.add(person);
+    if (person.containsKey("first") && person.containsKey("last") && person.containsKey("email")) {
+      return people.add(person);
+    } else {
+      print("New information requires First name, Last name, and Email");
+    }
   }
 
   void remove(String field) {

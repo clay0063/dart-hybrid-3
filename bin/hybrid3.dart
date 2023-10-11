@@ -12,22 +12,21 @@ void main(List<String> arguments) {
     ''';
 
   //convert to list of Map<String String>
-  var jsonList = convert.jsonDecode(json) as List<dynamic>; //can't decode directly to List<Map...>
-  var studentList = List<Map<String, String>>.from(jsonList.map((dynamic item){
+  var jsonList = convert.jsonDecode(json) as List<dynamic>; //verifies it's a list (only does directly to Dynamic)
+  var studentList = List<Map<String, String>>.from(jsonList.map((dynamic item) {
     return Map<String, String>.from(item); //return a Map String String for each dynamic item in the json list
   }));
-  
-  var testStudent = hybrid3.Student(studentList);
+
+  hybrid3.Student testStudent = hybrid3.Student(studentList);
 
   Map<String, String> newPerson = {
-    "first":"Miku",
-    "last":"Hatsune",
-    "email":"hatsu@algonquinlive.com"
+    "first": "Miku",
+    "last": "Hatsune",
+    "email": "hatsu@algonquinlive.com"
   };
 
   testStudent.plus(newPerson); //add new Map
-  testStudent.remove("Adam"); //remove a Map
+  testStudent.remove("Adam"); //remove a Map by value
   testStudent.sortList("first"); //sort by alphabetical first name
   testStudent.output(); //output after changes
 }
-
