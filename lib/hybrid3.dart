@@ -8,16 +8,16 @@ class Student {
   }
 
   void output() {
-    people.forEach(print);
+    return people.forEach(print);
   }
 
   void plus(Map<String, String> person) {
     //TODO: add error checking
-    people.add(person);
+    return people.add(person);
   }
 
   void remove(String field) {
     //TODO: add error checking
-    people.removeWhere((person) => person.containsValue(field));
+    return people.removeWhere((person) => person.containsValue(field));
   }
 }
