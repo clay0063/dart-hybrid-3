@@ -1,8 +1,8 @@
 class Student {
-  Student(List<Map<String, String>> studentData){
-    print(studentData);
-  }
-  void printSomething() {
-    print("test run");
+  List<Map<String, String>> people;
+  Student(this.people);
+
+  void printStudents() {
+    print(people);
   }
 }
